@@ -38,7 +38,7 @@ transform__2:
   split_field: 
     enable: true
     time_avg: ''
-    chan_avg: 1 #updated
+    chan_avg: 8 #updated
     col: corrected
     correlation: 'XX,YY'
 #    spw: '*:50~150'  # used for test RFI free channels only,
