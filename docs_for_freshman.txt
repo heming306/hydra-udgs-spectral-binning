@@ -1,0 +1,12 @@
+# how to install CARACal
+https://github.com/caracal-pipeline/caracal#installation-on-ilifu-slurm-environment
+
+# CARACal configuration file parameters
+https://caracal.readthedocs.io/en/latest/manual/workers/index.html#
+
+# CASA tutorial (more detail in data reduction)
+https://casaguides.nrao.edu/index.php/Karl_G._Jansky_VLA_Tutorials
+https://casaguides.nrao.edu/index.php?title=VLA_high_frequency_Spectral_Line_tutorial_-_IRC%2B10216-CASA6.2.0#Set_Up_the_Model_for_the_Flux_Calibrator
+
+# ilifu docs
+http://docs.ilifu.ac.za/#/getting_started/submit_job_slurm

@@ -1,0 +1,209 @@
+schema_version: 1.0.4
+
+general:
+  title: '' 
+  rawdatadir: '/idia/projects/hydra-udgs/SCI-20210212-NM-01/1615051332_20210525T09_06_34' # !!! need to update for 1615827253
+  msdir: msdir
+  input: input
+  output: output_1615051332
+  prefix: '1615051332' # !!! rename for 1615827253
+  final_report: false
+
+getdata:
+  dataid: ['1615051332_sdp_l0'] #['1615051332_20210525T09_06_34/1615051332_sdp_l0','1615827253_20210528T21_30_45/1615827253_sdp_l0'] # ['1621044672_sdp_l0','1621389217_sdp_l0']  # !!! rename for each data set, without extention
+
+obsconf:
+  obsinfo:
+    enable: true
+  target:
+    - all
+#    - T11R03C01
+#    - T11R03C01
+#    - T11R03C01
+  fcal:
+    - 'longest' 
+  bpcal:
+    - 'longest' 
+  gcal:
+    - 'all'
+  xcal:
+    - 'longest'
+  refant: 'm060' # maybe 'm060'
+  
+transform:
+  enable: true
+  field: 'calibrators'
+  label_in: ''
+  label_out: cal
+  split_field:
+    enable: true
+    time_avg: ''
+    chan_avg: 1 # !!! 1 hydra
+    col: data
+    correlation: 'XX,YY'
+    spw: '*:1387.0000~1415.0000MHz' # !!! set the correct hydra-udgs frequency
+    otfcal:
+      enable: false
+  obsinfo:
+    enable: true
+    listobs: true
+
+prep:
+  enable: true
+  label_in: cal
+  field: calibrators
+  manage_flags:
+    enable: true
+    mode: legacy
+  specweights:
+    enable: true
+    mode: uniform
+
+flag__legacysummary:
+  enable: true
+  field: calibrators
+  label_in: cal
+  summary:
+    enable: true
+
+flag__static:
+  enable: true
+  field: calibrators 
+  label_in: cal
+  rewind_flags:
+    enable: true
+  flag_quack:
+    enable: true
+    interval: 7
+    mode: beg
+  flag_autocorr:
+    enable: true
+  flag_shadow:
+    enable: true
+#  flag_spw:
+#    enable: true
+#    chans: '*:1419.4~1421.4MHz' # 533 (1419.36MHz, 220.8km/s) ~ 543 (1421.45MHz, -220.2km/s) , the last channel (543) is not falgged
+  summary:
+    enable: true
+
+flag__gcal: 
+  enable: true
+  field: calibrators 
+  label_in: cal
+  calfields: gcal
+  rewind_flags:
+    enable: false
+    version: gps_flagging__2_before
+  flag_rfi:
+    enable: true
+    col: DATA
+    flagger: tricolour
+    tricolour:
+      strategy: calibrator_soft_flagging.yaml
+#    flagger: aoflagger
+#    aoflagger:
+#      strategy: firstpass_Q.rfis
+
+flag__bpcal: 
+  enable: true 
+  field: calibrators 
+  label_in: cal 
+  calfields: bpcal 
+  rewind_flags:
+    enable: false
+    version: gps_flagging__2_before
+#  flag_spw:  # used for flag RFI channels which can not well flagged by tricolour and tfcrop
+#    enable: true
+#    chans: '*:1380.2397~1382.1207MHz'  # channls 48~57  (57 is not flagged, 49~55 show strong fake emission, GPS RFI)
+  flag_rfi: 
+    enable: true
+    col: DATA
+    flagger: tricolour # V1b
+    tricolour: # V1b
+      strategy: calibrator_soft_flagging.yaml # calibrator_soft_flagging.yaml # V1b   
+#    flagger: aoflagger
+#    aoflagger:
+#      strategy: firstpass_Q.rfis
+#    flagger: tfcrop # V1b
+#    tfcrop: # V1b
+#      flagdimension: freqtime # V1b
+#      timecutoff: 1.8 # 4.0 # V1b
+#      freqcutoff: 1.8 #3.0 # V1b
+
+crosscal:
+  enable: true
+  uvrange: '>150'
+  label_cal: 1gc
+  label_in: cal
+  set_model:
+    enable: true
+    meerkat_skymodel: false
+  primary:
+    reuse_existing_gains: false
+    order: KGBAKGB # KBGKB # test KGBAKGB later. try I?
+    combine: [scan,'',scan,'',scan,'',scan]
+    solint: [inf,60s,inf,'',inf,60s,inf]
+    calmode: ['',ap,'','','',ap,'']
+    b_solnorm: false
+    b_fillgaps: 70
+    plotgains: true
+    flag:
+      timecutoff: 2.0  # 1.8 # V0 a12 # V1b
+      freqcutoff: 2.0  # 1.8 # V0 a12 # V1b
+      flagdimension: timefreq # V0 a12 # V1b
+      usewindowstats: std  # v0 a12 # V1b
+  secondary:
+    reuse_existing_gains: false
+    order: 'FAF'  # FAF # test FAIG later. why FAIG not FAGI?
+    apply: 'KB'
+    combine: ['','',''] # ['','','']
+    solint: [inf,'',inf] # [inf,'',inf]
+    calmode: [ap,'',ap] # [ap,'',ap]
+#    flag:
+#      timecutoff: 1.8  # 1.8 # V0 a12 # V1b
+#      freqcutoff: 1.8  # 1.8 # V0 a12 # V1b
+#      flagdimension: timefreq # V0 a12 # V1b
+#      usewindowstats: std  # v0 a12 # V1b
+    plotgains: true
+  apply_cal: 
+    applyto: 
+      - bpcal
+      - gcal
+  summary:
+    enable: true
+
+inspect:
+  enable: true
+  label_in: cal
+  field: calibrators 
+#  label_cal: 1gc
+  uvrange: '>150'
+  dirname: 'crosscal'
+  shadems:
+    enable: false
+  standard_plotter: ragavi_vis # shadems
+#  fields:
+#    - bpcal
+#    - gcal
+  real_imag:
+    enable: true
+    avgtime: '60'
+    avgchan: '10'
+  amp_chan:
+    enable: true
+    avgtime: '60'
+    avgchan: '1'
+  phase_chan:
+    enable: true
+    avgtime: '60'
+    avgchan: '1'
+  amp_uvwave:
+    enable: true
+    avgtime: '60'
+    avgchan: '10'
+  phase_uvwave:
+    enable: true
+    avgtime: '60'
+    avgchan: '10'
+
+

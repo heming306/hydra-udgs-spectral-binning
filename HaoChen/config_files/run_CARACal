@@ -1,0 +1,18 @@
+# ~~~~~~~~~  1_hydra-udgs_high_z # listobs, frequency information
+
+cd /idia/projects/hydra-udgs/HaoChen/hydra-udgs_high_z
+
+venv=/idia/projects/hydra-udgs/CARACal_all/CARACal-venv-18Oct2021
+source $venv/bin/activate
+caracal -c 1_hydra-udgs_high_z_1615051332.yml --container-tech singularity -sid /software/astro/caracal/STIMELA_IMAGES_1.7.0
+deactivate #closing caracal
+
+# ~~~~~~~~~  2_hydra-udgs_high_z # cross cal
+
+cd /idia/projects/hydra-udgs/HaoChen/hydra-udgs_high_z
+
+sbatch /idia/projects/hydra-udgs/HaoChen/hydra-udgs_high_z/2_hydra-udgs_high_z_1615051332.sh
+
+
+### in case to self-cal both data together 1615051332 and 1615827253
+# as long as 1615051332_sdp_l0-summary.json and 1615827253_sdp_l0-summary.json in the ms dir, empty 1615051332_sdp_l0.ms and 1615827253_sdp_l0.ms will support the pipeline to run.
