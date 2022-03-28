@@ -38,7 +38,7 @@ transform:
   split_field:
     enable: true
     time_avg: ''
-    chan_avg: 4 # !!! 1 hydra; 1 channel = 5.5km/s ; 4 channel = 22km/s
+    chan_avg: 8 # !!! 1 hydra; 1 channel = 5.5km/s ; 4 channel = 22km/s; 8 channel = 45 km/s
     col: data
     correlation: 'XX,YY'
     spw: '*:1387.0000~1415.0000MHz' # !!! set the correct hydra-udgs frequency
