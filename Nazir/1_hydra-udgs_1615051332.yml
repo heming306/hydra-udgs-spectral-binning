@@ -28,4 +28,4 @@ obsconf:
     - 'all'
   xcal:
     - 'longest'
-  refant: 'm060' # 'm060'
+  refant: 'm008' #
