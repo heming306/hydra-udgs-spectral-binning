@@ -28,7 +28,7 @@ obsconf:
     - 'all'
   xcal:
     - 'longest'
-  refant: 'm060' #032
+  refant: 'm008' #032
   
 transform__2:
   enable: true
