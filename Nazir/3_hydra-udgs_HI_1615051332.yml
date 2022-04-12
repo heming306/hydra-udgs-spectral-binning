@@ -133,7 +133,7 @@ mask:
 selfcal:
   enable: true
   label_in: cont
-  ncpu: 8
+  ncpu: 8    #####30
   img_npix: 3600
   img_cell: 3 # 3 V1 # V1a
   img_taper: '9' # V1c
@@ -165,6 +165,7 @@ selfcal:
   transfer_model:
     enable: true
     transfer_to_label: corr
+    #num_workers = 30
   flagging_summary:
     enable: true
 
