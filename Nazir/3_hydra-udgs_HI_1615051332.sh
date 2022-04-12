@@ -2,7 +2,7 @@
 #SBATCH --job-name='Hydra-HI' #updated name
 #SBATCH --time=120:00:00
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=28
+#SBATCH --cpus-per-task=32
 #SBATCH --mem=230GB
 #SBATCH --output=3_hydra-udgs_HI_1615051332-%j-stdout.log ##updated names
 #SBATCH --error=3_hydra-udgs_HI_1615051332-%j-stderr.log ## updated names
