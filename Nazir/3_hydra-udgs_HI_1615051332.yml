@@ -145,9 +145,9 @@ selfcal:
   img_nchans: 5
   img_specfit_nrcoeff: 3
   img_sofia_settings:
-    kernels: [0, 3, 6, 12, 24, 48]
+    kernels: [0, 3, 6] #### , 12, 24, 48]
   cal_niter: 2
-  cal_timeslots_chunk: 300
+  cal_timeslots_chunk: -1 #####
   calibrate_with: cubical
   cal_cubical:
     shared_mem: 60Gb
@@ -161,14 +161,14 @@ selfcal:
   calibrate:
     enable: true
     gain_matrix_type: [GainDiagPhase,]
-    gsols_timeslots: [30, 5,]
+    gsols_timeslots: [30, 20,]  ### 5 too small
   transfer_apply_gains:
-    enable: true
+    enable: false            ### false for continuum cleaning
     transfer_to_label: corr
   transfer_model:
-    enable: true
+    enable: false           ### false for continuum cleaning
     transfer_to_label: corr
-    #num_workers = 30
+    num_workers = 30
   flagging_summary:
     enable: true
 
