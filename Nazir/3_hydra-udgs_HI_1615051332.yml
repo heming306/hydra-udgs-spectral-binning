@@ -136,7 +136,7 @@ mask:
 selfcal:
   enable: true
   label_in: cont
-  ncpu: 8    #####30
+  ncpu: 30    ##### was 8
   img_npix: 3600
   img_cell: 3 # 3 V1 # V1a
   img_taper: '9' # V1c
