@@ -30,7 +30,7 @@ obsconf:
     - 'longest'
   refant: 'm008' # maybe 'm010'
   
-  transform__2:
+transform__2:
   enable: true
   field: 'target'
   label_in: ''
