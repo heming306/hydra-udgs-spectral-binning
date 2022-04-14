@@ -161,7 +161,7 @@ selfcal:
   calibrate:
     enable: true
     gain_matrix_type: [GainDiagPhase,]
-    gsols_timeslots: [30, 20,]  ### 5 too small
+    gsols_timeslots: [30, 15,]  ### 5 too small
   transfer_apply_gains:
     enable: false            ### false for continuum cleaning
     transfer_to_label: corr
