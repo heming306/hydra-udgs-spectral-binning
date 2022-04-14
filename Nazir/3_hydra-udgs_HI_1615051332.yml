@@ -168,7 +168,7 @@ selfcal:
   transfer_model:
     enable: false           ### false for continuum cleaning
     transfer_to_label: corr
-    num_workers = 30
+    num_workers : 30
   flagging_summary:
     enable: true
 
