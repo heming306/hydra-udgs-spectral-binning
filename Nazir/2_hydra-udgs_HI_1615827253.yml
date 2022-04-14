@@ -28,7 +28,7 @@ obsconf:
     - 'all'
   xcal:
     - 'longest'
-  refant: 'm008' # maybe 'm060'
+  refant: 'm010' # maybe 'm060'
   
 transform:
   enable: true
@@ -72,9 +72,9 @@ flag__static:
   label_in: cal
   rewind_flags:
     enable: true
-  #flag_antennas:
-  #  enable: true
-  #  antennas: 'm058,m057,m062' #### flagged antennas
+  flag_antennas:
+    enable: true
+    antennas: 'm058,m057' #### flagged antennas
   flag_quack:
     enable: true
     interval: 7
