@@ -2,10 +2,10 @@ schema_version: 1.0.4
 
 general:
   title: '' 
-  rawdatadir: '/idia/projects/hydra-udgs/SCI-20210212-NM-01/1615051332_20210525T09_06_34' # !!! need to update for 1615827253
+  #rawdatadir: '/idia/projects/hydra-udgs/SCI-20210212-NM-01/1615051332_20210525T09_06_34' # !!! need to update for 1615827253
   msdir: msdir
   input: input
-  output: output_1615051332
+  output: output
   prefix: '1615051332' # !!! rename for 1615827253
   final_report: false
 
