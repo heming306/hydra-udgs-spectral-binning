@@ -163,10 +163,10 @@ selfcal:
     gain_matrix_type: [GainDiagPhase,]
     gsols_timeslots: [30, 15,]  ### 5 too small
   transfer_apply_gains:
-    enable: false            ### false for continuum cleaning
+    enable: true            ### false for continuum cleaning
     transfer_to_label: corr
   transfer_model:
-    enable: false           ### false for continuum cleaning
+    enable: true           ### false for continuum cleaning
     transfer_to_label: corr
     num_workers : 30
   flagging_summary:
