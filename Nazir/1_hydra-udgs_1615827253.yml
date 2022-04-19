@@ -5,7 +5,7 @@ general:
   rawdatadir: '/idia/projects/hydra-udgs/SCI-20210212-NM-01/1615827253_20210528T21_30_45' 
   msdir: msdir
   input: input
-  output: output_1615827253
+  output: output
   prefix: '1615827253' # !!! rename for each data set 
   final_report: false
 
