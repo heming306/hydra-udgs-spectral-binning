@@ -72,9 +72,9 @@ flag__2:
   enable: true
   field: target
   label_in: corr
-  #flag_antennas:
-  #  enable: true
-  #  antennas: 'm058,m057' #### flagged antennas
+  flag_antennas:
+    enable: true
+    antennas: 'm058,m057' #### flagged antennas
   flag_quack:
     enable: true
     interval: 7
