@@ -9,7 +9,7 @@
 
 #use last four digits of mosaic id for job-name
 
-cd /idia/projects/hydra-udgs/Nazir/hydra-udgs-HI-8channel-bin2 ## updated naming
+cd /idia/projects/hydra-udgs/Nazir/hydra-udgs-HI-spec-binn ## updated naming
 venv=/idia/projects/hydra-udgs/CARACal_all/CARACal-venv-18Oct2021
 source $venv/bin/activate
 caracal -c 3_hydra-udgs_HI_1615827253.yml --container-tech singularity -sid /software/astro/caracal/STIMELA_IMAGES_1.7.0
