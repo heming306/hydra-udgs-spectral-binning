@@ -28,7 +28,7 @@ obsconf:
     - 'all'
   xcal:
     - 'longest'
-  refant: 'm060' #updated 32
+  refant: 'm008' #updated 32
   
 line:
   enable: true 
