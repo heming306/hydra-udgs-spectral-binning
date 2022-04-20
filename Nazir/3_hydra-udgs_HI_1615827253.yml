@@ -74,7 +74,7 @@ flag__2:
   label_in: corr
   flag_antennas:
     enable: true
-    antennas: 'm058,m057' #### flagged antennas
+    antennas: 'm058,m057,m048,m063' #### flagged antennas
   flag_quack:
     enable: true
     interval: 7
