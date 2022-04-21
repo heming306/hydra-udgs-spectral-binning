@@ -1,0 +1,31 @@
+schema_version: 1.0.4
+
+general:
+  title: '' 
+  rawdatadir: '/idia/projects/hydra-udgs/SCI-20210212-NM-01/1615827253_20210528T21_30_45' 
+  msdir: msdir
+  input: input
+  output: output
+  prefix: '1615827253' # !!! rename for each data set 
+  final_report: false
+
+getdata:
+  dataid: ['1615827253_sdp_l0'] #['1615051332_20210525T09_06_34/1615051332_sdp_l0','1615827253_20210528T21_30_45/1615827253_sdp_l0'] # ['1621044672_sdp_l0','1621389217_sdp_l0']  # !!! rename for each data set, without extention
+
+obsconf:
+  obsinfo:
+    enable: true
+  target:
+    - all
+#    - T11R03C01
+#    - T11R03C01
+#    - T11R03C01
+  fcal:
+    - 'longest' 
+  bpcal:
+    - 'longest' 
+  gcal:
+    - 'all'
+  xcal:
+    - 'longest'
+  refant: 'm008' #
