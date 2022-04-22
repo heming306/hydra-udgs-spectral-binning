@@ -2,7 +2,7 @@ schema_version: 1.0.4
 
 general:
   title: '' 
-  rawdatadir: '/idia/projects/hydra-udgs/SCI-20210212-NM-01'#/1615051332_20210525T09_06_34' 
+  rawdatadir: '/idia/projects/hydra-udgs/SCI-20210212-NM-01/1615051332_20210525T09_06_34' 
   msdir: msdir
   input: input
   output: output
