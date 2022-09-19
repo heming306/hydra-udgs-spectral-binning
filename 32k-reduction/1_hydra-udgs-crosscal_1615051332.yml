@@ -10,7 +10,7 @@ general:
   final_report: false
 
 getdata:
-  dataid: ['1615051332_sdp_l0'] #['1615827253_sdp_l0']  # !!! rename for each data set, without extention
+  dataid: ['1615051332_32K_XXYY'] #['1615827253_sdp_l0']  # !!! rename for each data set, without extention
 
 obsconf:
   obsinfo:
