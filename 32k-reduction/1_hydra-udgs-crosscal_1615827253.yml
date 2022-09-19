@@ -10,7 +10,7 @@ general:
   final_report: false
 
 getdata:
-  dataid: ['1615827253_sdp_l0'] #['1615051332_20210525T09_06_34/1615051332_sdp_l0','1615827253_20210528T21_30_45/1615827253_sdp_l0'] # ['1621044672_sdp_l0','1621389217_sdp_l0']  # !!! rename for each data set, without extention
+  dataid: ['1615827253_32K_XXYY'] #['1615051332_20210525T09_06_34/1615051332_sdp_l0','1615827253_20210528T21_30_45/1615827253_sdp_l0'] # ['1621044672_sdp_l0','1621389217_sdp_l0']  # !!! rename for each data set, without extention
 
 obsconf:
   obsinfo:
