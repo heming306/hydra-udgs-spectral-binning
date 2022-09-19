@@ -1,0 +1,12 @@
+# ~~~~~~~~~  1_hydra-udgs_HI # cross cal -------- set 1
+
+cd /scratch3/users/nazir/hydra-udgs/
+sbatch /scratch3/users/nazir/hydra-udgs/1_hydra-udgs-crosscal_1615051332.sh
+
+
+# ~~~~~~~~~  1_hydra-udgs_HI # cross cal -------- set 2
+
+cd /scratch3/users/nazir/hydra-udgs/
+sbatch /scratch3/users/nazir/hydra-udgs/1_hydra-udgs-crosscal_1615827253.sh
+
+
