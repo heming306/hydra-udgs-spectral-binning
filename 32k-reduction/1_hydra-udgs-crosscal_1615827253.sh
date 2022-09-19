@@ -17,5 +17,5 @@
 cd /scratch3/users/nazir/hydra-udgs/ ## updated naming
 venv=/scratch3/users/nazir/hydra-udgs/CARACal/CARACal-venv-18Aug2022
 source $venv/bin/activate
-caracal -c 1_hydra-udgs-crosscal_1615827253.yml --container-tech singularity -sid /software/astro/caracal/STIMELA_IMAGES_1.7.0
+caracal -c 1_hydra-udgs-crosscal_1615827253.yml --container-tech singularity -sid /idia/software/astro/caracal/STIMELA_IMAGES_1.7.0
 deactivate #closing caracal
