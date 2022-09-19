@@ -2,7 +2,7 @@ schema_version: 1.0.4
 
 general:
   title: '' 
-  rawdatadir: '/idia/projects/hydra-udgs/SCI-20210212-NM-01/1615827253_20210528T21_30_45' # !!! need to update for 1615827253
+  rawdatadir: '/idia/projects/hydra-udgs/Nazir/hydra-udgs-HI-split-32k' # !!! need to update for 1615827253
   msdir: msdir
   input: input
   output: output
@@ -41,7 +41,7 @@ transform:
     chan_avg: 1 # !!! 1 hydra; 1 channel = 5.5km/s ; 4 channel = 22km/s; 8 channel = 45 km/s
     col: data
     correlation: 'XX,YY'
-    spw: '*:1387.0000~1415.0000MHz' # !!! set the correct hydra-udgs frequency
+    spw: '*:1300.0000~1420.0000MHz' # !!! set the correct hydra-udgs frequency
     otfcal:
       enable: false
   obsinfo:
