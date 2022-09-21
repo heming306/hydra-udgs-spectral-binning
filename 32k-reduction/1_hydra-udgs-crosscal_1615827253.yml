@@ -195,11 +195,11 @@ inspect:
   amp_chan:
     enable: true
     avgtime: '60'
-    avgchan: '1'
+    avgchan: '10'
   phase_chan:
     enable: true
     avgtime: '60'
-    avgchan: '1'
+    avgchan: '10'
   amp_uvwave:
     enable: true
     avgtime: '60'
