@@ -10,3 +10,17 @@ cd /scratch3/users/nazir/hydra-udgs/
 sbatch /scratch3/users/nazir/hydra-udgs/1_hydra-udgs-crosscal_1615827253.sh
 
 
+### in case to self-cal both data together 1615051332 and 1615827253
+### as long as 1615051332_sdp_l0-summary.json and 1615827253_sdp_l0-summary.json in the ms dir, empty 1615051332_sdp_l0.ms and 1615827253_sdp_l0.ms will support the pipeline to run.
+
+# ~~~~~~~~~  2_hydra-udgs_HI #  self cal
+
+cd /scratch3/users/nazir/hydra-udgs/
+sbatch /scratch3/users/nazir/hydra-udgs/2_hydra-udgs-selfscal.sh  
+
+
+
+# ~~~~~~~~~  3_hydra-udgs_HI #  continuum
+
+cd /scratch3/users/nazir/hydra-udgs/
+sbatch /scratch3/users/nazir/hydra-udgs/3_hydra-udgs-continuum.sh
