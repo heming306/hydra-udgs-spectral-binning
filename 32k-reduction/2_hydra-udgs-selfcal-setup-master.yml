@@ -6,7 +6,7 @@ general:
   msdir: msdir
   input: input
   output: output
-  prefix: '1615' # !!! rename for each data set 
+  prefix: '1615051332' # !!! rename for each data set 
   final_report: false
 
 getdata:
@@ -85,7 +85,7 @@ flag__2:
     enable: true
   flag_spw:
     enable: true # V0
-    chans: '*:1419.4~1421.4MHz' # 533 (1419.36MHz, 220.8km/s) ~ 543 (1421.45MHz, -220.2km/s) # 543 is not flagged?
+    chans: '*:1419.4~1421.4MHz' # perhaps : 1375 - 1387MHz :The GPS L3 signal is sporadic but seen fairly often.
   summary:
     enable: true
     
