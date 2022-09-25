@@ -6,7 +6,7 @@ general:
   msdir: msdir
   input: input
   output: output
-  prefix: '1615051332' # !!! rename for each data set 
+  prefix: '1615827253' # !!! rename for each data set 
   final_report: false
 
 getdata:
