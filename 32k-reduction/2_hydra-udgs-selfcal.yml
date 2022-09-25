@@ -6,7 +6,7 @@ general:
   msdir: msdir
   input: input
   output: output
-  prefix: '1615051332' # !!! rename for each data set 
+  prefix: '1615' # !!! rename for each data set 
   final_report: false
 
 getdata:
@@ -29,78 +29,6 @@ obsconf:
   xcal:
     - 'longest'
   refant: 'm008' #032
-  
-transform__2:
-  enable: true
-  field: 'target'
-  label_in: ''
-  label_out: corr
-  split_field: 
-    enable: true
-    time_avg: ''
-    chan_avg: 1 #updated
-    col: corrected
-    correlation: 'XX,YY'
-#    spw: '*:50~150'  # used for test RFI free channels only,
-    spw: '*:1300.0000~1420.0000MHz' # 1397.3494 
-    otfcal: 
-      enable: true
-      label_cal: 1gc
-  obsinfo: 
-    enable: true
-    listobs: true
-
-prep__2:
-  enable: true
-  label_in: corr
-  field: target
-  manage_flags:
-    enable: true
-    mode: legacy
-  specweights:
-    enable: true
-    mode: uniform
-
-flag__legacysummary_target:  # check if the taget is overflag (~40%) because of too much telescope are flagged in bpcal
-  enable: true
-  field: target
-  label_in: corr
-  summary:
-    enable: true
-    
-flag__2:
-  enable: true
-  field: target
-  label_in: corr
-  flag_antennas:
-    enable: true
-    antennas: 'm058,m057,m062,m063' #### flagged antennas
-  flag_quack:
-    enable: true
-    interval: 7
-    mode: beg
-  flag_autocorr:
-    enable: true
-  flag_shadow:
-    enable: true
-  flag_spw:
-    enable: true # V0
-    chans: '*:1419.4~1421.4MHz' # perhaps : 1375 - 1387MHz :The GPS L3 signal is sporadic but seen fairly often.
-  summary:
-    enable: true
-    
-flag__3:
-  enable: true
-  label_in: corr
-  field: target
-  flag_rfi:
-    enable: true
-    flagger: aoflagger
-    col: DATA
-    aoflagger:
-      strategy: flagtarget_Q.rfis # ps_aoflagger_Q.rfis
-  summary:
-    enable: true
 
 transform__3:
   enable: true
