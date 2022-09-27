@@ -100,5 +100,5 @@ selfcal:
   flagging_summary:
     enable: true
 
-ddcal:
-  enable: false
+#ddcal:
+#  enable: false
