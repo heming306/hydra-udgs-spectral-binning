@@ -66,7 +66,7 @@ selfcal:
   label_in: cont
   ncpu: 30    ##### was 8
   img_npix: 3600
-  img_cell: 3 # 3 V1 # V1a
+  img_cell: 3 # 3 V1 # V1a  - testing 28/sep/2022 : increased this to 4
   img_taper: '9' # V1c
   img_robust: 0 # -1 V1 # V1a
   img_mgain: 0.99
