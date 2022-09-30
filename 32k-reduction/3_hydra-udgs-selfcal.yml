@@ -70,25 +70,26 @@ selfcal:
   img_taper: '9' # V1c
   img_robust: 0 # -1 V1 # V1a
   img_mgain: 0.99
-  img_nchans: 5
+  img_nchans: 10
   img_specfit_nrcoeff: 3
   img_sofia_settings:
     kernels: [0, 3, 6] #### , 12, 24, 48]
-  cal_niter: 2
+  cal_niter: 3
   cal_timeslots_chunk: -1 #####
   calibrate_with: cubical
   cal_cubical:
-    shared_mem: 60Gb
+    shared_mem: 230Gb
+    dist_max_chunks: 4
   image:
     enable: true
-    clean_cutoff: [0.2,0.2,0.2]
-    cleanmask_method: [sofia,sofia,sofia]
-    cleanmask_thr: [5,4,3.5] # [5,4,3.5]
-    cleanmask_localrms: [true,true,true]
-    cleanmask_localrms_window: [401,401,401] # [401,]
+    clean_cutoff: [0.5,0.5,0.5,0.5]
+    cleanmask_method: [sofia,sofia,sofia,sofia]
+    cleanmask_thr: [20,8,4,3.5] # [5,4,3.5]
+    cleanmask_localrms: [true,true,true,true]
+    cleanmask_localrms_window: [401,401,401,401] # [401,]
   calibrate:
     enable: true
-    gain_matrix_type: [GainDiagPhase,]
+    gain_matrix_type: [GainDiagPhase,GainDiagPhase,GainDiag]
     gsols_timeslots: [30, 15,]  ### 5 too small --- 20 is good but caracal crashes - "inconsistent seldcal chunking"
   transfer_apply_gains:
     enable: false            ### false for continuum cleaning
