@@ -1,0 +1,99 @@
+schema_version: 1.0.4
+
+general:
+  title: '' 
+  rawdatadir: '/idia/projects/hydra-udgs/Nazir/hydra-udgs-HI-split-32k' 
+  msdir: msdir
+  input: input
+  output: output
+  prefix: '1615' # !!! rename for each data set 
+  final_report: false
+
+getdata:
+  dataid: ['1615051332_32K_XXYY','1615827253_32K_XXYY'] #['1615051332_20210525T09_06_34/1615051332_sdp_l0','1615827253_20210528T21_30_45/1615827253_sdp_l0'] # ['1621044672_sdp_l0','1621389217_sdp_l0']  # !!! rename for each data set, without extention
+
+obsconf:
+  obsinfo:
+    enable: true
+  target:
+    - all
+#    - T11R03C01
+#    - T11R03C01
+#    - T11R03C01
+  fcal:
+    - 'longest' 
+  bpcal:
+    - 'longest' 
+  gcal:
+    - 'all'
+  xcal:
+    - 'longest'
+  refant: 'm008' #updated 32
+ 
+    
+selfcal:
+  enable: true
+  label_in: cont
+  ncpu: 30    ##### was 8
+  img_npix: 3600
+  img_cell: 3 # 3 V1 # V1a 
+  img_taper: '9' # V1c
+  img_robust: 0 # -1 V1 # V1a
+  img_mgain: 0.99
+  img_nchans: 10
+  img_specfit_nrcoeff: 3
+  img_sofia_settings:
+    kernels: [0, 3, 6] #### , 12, 24, 48]
+  cal_niter: 3
+  cal_timeslots_chunk: -1 #####
+  calibrate_with: cubical
+  cal_cubical:
+    shared_mem: 230Gb
+    dist_max_chunks: 4
+  image:
+    enable: false
+    clean_cutoff: [0.5,0.5,0.5,0.5]
+    cleanmask_method: [sofia,sofia,sofia,sofia]
+    cleanmask_thr: [20,8,4,3.5] # [5,4,3.5]
+    cleanmask_localrms: [true,true,true,true]
+    cleanmask_localrms_window: [401,401,401,401] # [401,]
+  calibrate:
+    enable: false
+    gain_matrix_type: [GainDiagPhase,GainDiagPhase,GainDiag]
+    gsols_timeslots: [30, 15,]  ### 5 too small --- 20 is good but caracal crashes - "inconsistent seldcal chunking"
+  transfer_apply_gains:
+    enable: true            ### false for continuum cleaning
+    transfer_to_label: corr
+  transfer_model:
+    enable: true           ### false for continuum cleaning
+    transfer_to_label: corr
+    num_workers : 30
+  flagging_summary:
+    enable: false
+    
+line__subtractmodelcol: # only subtractmodelcol
+  enable: true
+  restfreq: '1.420405752GHz'
+  label_in: corr
+  subtractmodelcol:
+    enable: true
+  addmodelcol:  
+    enable: false
+  mstransform:
+    enable: true #true
+    uvlin:
+      enable: false
+  sunblocker:
+    enable: false # true
+  make_cube:
+    enable: false #true
+  remove_stokes_axis:
+    enable: false
+  pb_cube:
+    enable: false 
+    apply_pb: false 
+    pb_type: mauch    
+  freq_to_vel:
+    enable: false  
+  sofia:
+    enable: false
