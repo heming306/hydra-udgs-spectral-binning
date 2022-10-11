@@ -29,6 +29,24 @@ obsconf:
   xcal:
     - 'longest'
   refant: 'm008' #updated 32
+  
+  
+transform__hydra_corr:
+  enable: true
+  field: 'target'
+  label_in: corr
+  label_out: hydra_corr
+  split_field:
+    enable: true
+    time_avg: ''
+    col: data
+    correlation: ''
+    spw: '*:1380.000~1419.000MHz'
+    otfcal:
+      enable: false
+  obsinfo:
+    enable: true
+    listobs: true
  
     
 selfcal:
@@ -63,10 +81,10 @@ selfcal:
     gsols_timeslots: [30, 15,]  ### 5 too small --- 20 is good but caracal crashes - "inconsistent seldcal chunking"
   transfer_apply_gains:
     enable: true            ### false for continuum cleaning
-    transfer_to_label: corr
+    transfer_to_label: hydra_corr
   transfer_model:
     enable: true           ### false for continuum cleaning
-    transfer_to_label: corr
+    transfer_to_label: hydra_corr
     num_workers : 30
   flagging_summary:
     enable: false
@@ -74,7 +92,7 @@ selfcal:
 line__subtractmodelcol: # only subtractmodelcol
   enable: true
   restfreq: '1.420405752GHz'
-  label_in: corr
+  label_in: hydra_corr
   subtractmodelcol:
     enable: true
   addmodelcol:  
