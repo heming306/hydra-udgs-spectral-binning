@@ -5,8 +5,8 @@
 #SBATCH --mem=230GB
 #SBATCH --job-name='Hydra-HI' #updated name
 #SBATCH --distribution=plane=1
-#SBATCH --output=4_hydra-udgs_selfcal2-%j-stdout.log ##updated names
-#SBATCH --error=4_hydra-udgs_selfcal2-%j-stderr.log ## updated names
+#SBATCH --output=5_hydra-udgs_selfcal3-apply-%j-stdout.log ##updated names
+#SBATCH --error=5_hydra-udgs_selfcal3-apply-%j-stderr.log ## updated names
 #SBATCH --partition=Main
 #SBATCH --time="14-00:00:00"
 #SBATCH --mail-user="mkdnaz002@myuct.ac.za"
