@@ -34,7 +34,7 @@ obsconf:
 line:
   enable: true 
   restfreq: '1.420405752GHz'
-  label_in: hydra-corr #!!!
+  label_in: hydra_corr #!!!
   subtractmodelcol:
     enable: false # !! default true
   mstransform:
