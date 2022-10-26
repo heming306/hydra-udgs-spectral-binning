@@ -12,29 +12,11 @@ general:
 getdata:
   dataid: ['1615051332_32K_XXYY','1615827253_32K_XXYY'] #['1615051332_20210525T09_06_34/1615051332_sdp_l0','1615827253_20210528T21_30_45/1615827253_sdp_l0'] # ['1621044672_sdp_l0','1621389217_sdp_l0']  # !!! rename for each data set, without extention
 
-obsconf:
-  obsinfo:
-    enable: true
-  target:
-    - all
-#    - T11R03C01
-#    - T11R03C01
-#    - T11R03C01
-  fcal:
-    - 'longest' 
-  bpcal:
-    - 'longest' 
-  gcal:
-    - 'all'
-  xcal:
-    - 'longest'
-  refant: 'm008' #updated 32
-  
-
 line:
   enable: true 
   restfreq: '1.420405752GHz'
   label_in: hydra_corr #!!!
+  line_name: HI_r05
   subtractmodelcol:
     enable: false # !! default true
   mstransform:
@@ -60,19 +42,19 @@ line:
   make_cube:
     enable: true # 
     use_mstransform: true
-    npix: [3300] # 110' in size
-    cell: 2 # <= 1/3 beam # 2 V1 # V1a 
+    npix: [1620] # 110' in size
+    cell: 4 # <= 1/3 beam # 2 V1 # V1a 
     weight: 'briggs'
-    robust: 0 # 0.5 v0 # 0 V1a
+    robust: 0.5 # 0.5 v0 # 0 V1a
 #    taper: 15 # V1d   
 #    niter: 2 #  
     wscl_sofia_niter: 1  ########################from 2
-    wscl_auto_mask: 3.5 # 10 # 5 Julia #V0 # V1a
-    wscl_auto_thr: 1.5 # 0.5 *rms #V0 # V1a
+    wscl_auto_mask: 5 # 10 # 5 Julia #V0 # V1a
+    wscl_auto_thr: 0.5 # 0.5 *rms #V0 # V1a
   remove_stokes_axis:
     enable: true # V1d
   pb_cube:
-    enable: true # true # V1d
+    enable: false # true # V1d# after final cleaning    
     apply_pb: false # 
     pb_type: mauch
   freq_to_vel:
