@@ -8,7 +8,7 @@
 #SBATCH --output=5_hydra-udgs_cube-%j-stdout.log ##updated names
 #SBATCH --error=5_hydra-udgs_cube-%j-stderr.log ## updated names
 #SBATCH --partition=Main
-#SBATCH --time="2-12:00:00"
+#SBATCH --time="3-12:00:00"
 #SBATCH --mail-user="mkdnaz002@myuct.ac.za"
 #SBATCH --mail-type="START,END,FAIL"
 
@@ -17,5 +17,5 @@
 cd /scratch3/users/nazir/hydra-udgs/ ## updated naming
 venv=/scratch3/users/nazir/hydra-udgs/CARACal_all/CARACal-venv-19Sep2022
 source $venv/bin/activate
-caracal -c 5_hydra-udgs-cube.yml --container-tech singularity -sid /software/astro/caracal/STIMELA_IMAGES_1.7.5
+caracal -c 6_hydra-udgs-cube.yml --container-tech singularity -sid /software/astro/caracal/STIMELA_IMAGES_1.7.5
 deactivate #closing caracal
