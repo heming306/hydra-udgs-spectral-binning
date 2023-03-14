@@ -1,0 +1,48 @@
+schema_version: 1.0.4
+
+general:
+  title: '' 
+  rawdatadir: '/idia/projects/hydra-udgs/Nazir/hydra-udgs-HI-split-32k' 
+  msdir: msdir
+  input: input
+  output: output
+  prefix: '1615' # !!! rename for each data set 
+  final_report: false
+
+getdata:
+  dataid: ['1615051332_32K_XXYY','1615827253_32K_XXYY'] #['1615051332_20210525T09_06_34/1615051332_sdp_l0','1615827253_20210528T21_30_45/1615827253_sdp_l0'] # ['1621044672_sdp_l0','1621389217_sdp_l0']  # !!! rename for each data set, without extention
+
+line:
+  enable: true 
+  restfreq: '1.420405752GHz'
+  label_in: hydra_corr #!!!
+  line_name: HI_r05_v02
+  subtractmodelcol:
+    enable: false # !! default true
+  mstransform:
+    enable: false # !! default true
+  sunblocker:
+    enable: false ###########################################changed from true
+  make_cube:
+    enable: true # 
+    use_mstransform: true
+    npix: [1620] # 110' in size
+    cell: 4 # <= 1/3 beam # 2 V1 # V1a 
+    firstchan: 250 #list_obs
+    weight: 'briggs'
+    robust: 0.5 # 0.5 v0 # 0 V1a
+#    taper: 15 # V1d   
+#    niter: 2 #  
+    wscl_sofia_niter: 1  ########################from 2
+    wscl_user_clean_mask:
+    wscl_auto_thr: 0.5 # 0.5 *rms #V0 # V1a 
+  remove_stokes_axis:
+    enable: true # V1d
+  pb_cube:
+    enable: false # true # V1d# after final cleaning    
+    apply_pb: false # 
+    pb_type: mauch
+  freq_to_vel:
+    enable: true #true # false  
+  sofia:
+    enable: false
