@@ -40,8 +40,6 @@ line:
     enable: true # V1d
   pb_cube:
     enable: false # true # V1d# after final cleaning    
-    apply_pb: false # 
-    pb_type: mauch
   freq_to_vel:
     enable: true #true # false  
   sofia:
