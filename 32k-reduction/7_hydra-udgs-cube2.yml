@@ -34,7 +34,7 @@ line:
 #    taper: 15 # V1d   
 #    niter: 2 #  
     wscl_sofia_niter: 1  ########################from 2
-    wscl_user_clean_mask:
+    wscl_user_clean_mask: 'version26_mask.fits'
     wscl_auto_thr: 0.5 # 0.5 *rms #V0 # V1a 
   remove_stokes_axis:
     enable: true # V1d
