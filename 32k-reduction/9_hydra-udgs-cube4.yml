@@ -46,7 +46,7 @@ line:
 #      changrid: 570, 1309.0MHz, 210.000kHz ## nchan is an integer, and chan0 and chanw must include units # # Grid the different frequency range of Doppler-tracking correction to be the same for different nights. # V1d
     uvlin:
       enable: true
-      fitspw: '0:0~29;60~64;109~242;275~288;531~539;897~1239' # eg . 0:0~100;150~300 
+      fitspw: '0:0~64;109~407;531~539;897~1239' # eg . 0:0~100;150~300 
       fitorder: 1
 #  flag_mst_errors:
 #    enable: true # V0
