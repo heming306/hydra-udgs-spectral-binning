@@ -1,5 +1,5 @@
 schema_version: 1.0.4
-
+# redundant script!!!!!!!!!!!!!!!!!!do not run
 general:
   title: '' 
   rawdatadir: '/idia/projects/hydra-udgs/Nazir/hydra-udgs-HI-split-32k' 
