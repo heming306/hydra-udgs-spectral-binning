@@ -11,6 +11,7 @@
 #SBATCH --time="3-12:00:00"
 #SBATCH --mail-user="mkdnaz002@myuct.ac.za"
 #SBATCH --mail-type="START,END,FAIL"
+# redundant !!!!!!!!!!!!!!!!!!!do not run
 
 #use last four digits of mosaic id for job-name
 
