@@ -32,7 +32,7 @@ obsconf:
 line:
   enable: true 
   restfreq: '1.420405752GHz'
-  label_in: HI_r05_v03 #!!!
+  label_in: Hydra_corr #!!!
   line_name: HI_r05_v04
   subtractmodelcol:
     enable: false # !! default true
