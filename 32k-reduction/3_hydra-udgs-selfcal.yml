@@ -6,7 +6,7 @@ general:
   msdir: msdir
   input: input
   output: output
-  prefix: '1615' # !!! rename for each data set 
+  prefix: 'comb' # !!! rename for each data set 
   final_report: false
 
 getdata:
@@ -34,11 +34,11 @@ transform__3:
   enable: true
   field: 'target'
   label_in: corr
-  label_out: cont
+  label_out: cont2
   split_field:
     enable: true
     time_avg: ''
-    chan_avg: 9
+    chan_avg: 32
     col: data
     correlation: ''
     spw: ''
@@ -63,13 +63,14 @@ mask:
 
 selfcal:
   enable: true
-  label_in: cont
+  label_in: cont2
   ncpu: 30    ##### was 8
   img_npix: 3600
   img_cell: 3 # 3 V1 # V1a 
   img_taper: '9' # V1c
   img_robust: 0 # -1 V1 # V1a
   img_mgain: 0.99
+  img_nrdeconvsubimg: 9
   img_nchans: 10
   img_specfit_nrcoeff: 3
   img_sofia_settings:
@@ -80,17 +81,20 @@ selfcal:
   cal_cubical:
     shared_mem: 230Gb
     dist_max_chunks: 4
+    flag_madmax: false
   image:
     enable: true
     clean_cutoff: [0.5,0.5,0.5,0.5]
-    cleanmask_method: [sofia,sofia,sofia,sofia]
+    cleanmask_method: [wsclean,breizorro,breizorro,sofia]
     cleanmask_thr: [20,8,4,3.5] # [5,4,3.5]
     cleanmask_localrms: [true,true,true,true]
-    cleanmask_localrms_window: [401,401,401,401] # [401,]
+    cleanmask_localrms_window: [101,201,301,401] # [401,]
+  img_breizorro:
+    boxsize: 100
   calibrate:
     enable: true
     gain_matrix_type: [GainDiagPhase,GainDiagPhase,GainDiag]
-    gsols_timeslots: [30, 15,]  ### 5 too small --- 20 is good but caracal crashes - "inconsistent seldcal chunking"
+    gsols_timeslots: [20, 20, 60]  ### 5 too small --- 20 is good but caracal crashes - "inconsistent seldcal chunking"
   transfer_apply_gains:
     enable: false            ### false for continuum cleaning
     transfer_to_label: corr
