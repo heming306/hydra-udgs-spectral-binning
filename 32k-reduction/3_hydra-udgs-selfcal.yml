@@ -89,7 +89,7 @@ selfcal:
     cleanmask_thr: [20,8,4,3.5] # [5,4,3.5]
     cleanmask_localrms: [true,true,true,true]
     cleanmask_localrms_window: [101,201,301,401] # [401,]
-  img_breizorro:
+  img_breizorro_settings:
     boxsize: 100
   calibrate:
     enable: true
